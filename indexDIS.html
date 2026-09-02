@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIS 365 | Soluciones Digitales Escalables</title>
+    
+    <!-- Conexión a Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configuración opcional para personalizar tu Azul Corporativo en Tailwind -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              disBlue: '#1a568c', /* Azul extraído de tu logo */
+              disGray: '#595a5c', /* Gris de los números 365 */
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-white text-slate-800 antialiased font-sans">
+
+    <!-- ==========================================
+         1. NAVBAR (Barra de Navegación)
+         ========================================== -->
+    <nav class="bg-white border-b border-gray-100 sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          
+          <!-- Izquierda: Logo (Solo Imagen, sin texto, tamaño ampliado) -->
+          <div class="flex-shrink-0 flex items-center cursor-pointer">
+            <a href="#" class="flex items-center">
+              <!-- Cambié h-10 a h-12 para que se vea más grande. Si lo quieres aún más imponente, puedes probar con h-14 -->
+              <img src="assets/logo-dis365.png" alt="Logo DIS 365" class="h-12 w-auto object-contain">
+            </a>
+          </div>
+    
+          <!-- Centro: Enlaces -->
+          <div class="hidden md:flex space-x-8">
+            <a href="#nosotros" class="text-slate-600 hover:text-disBlue font-medium text-sm transition duration-200">Nosotros</a>
+            <a href="#servicios" class="text-slate-600 hover:text-disBlue font-medium text-sm transition duration-200">Servicios</a>
+            <a href="#soluciones" class="text-slate-600 hover:text-disBlue font-medium text-sm transition duration-200">SaaS</a>
+            <a href="#faq" class="text-slate-600 hover:text-disBlue font-medium text-sm transition duration-200">FAQ</a>
+            <a href="#contacto" class="text-slate-600 hover:text-disBlue font-medium text-sm transition duration-200">Contacto</a>
+          </div>
+    
+          <!-- Derecha: CTA -->
+          <div class="hidden md:flex">
+            <a href="#contacto" class="bg-disBlue hover:bg-blue-800 text-white font-semibold text-sm py-2.5 px-6 rounded-md transition duration-300 shadow-sm">
+              Agendar Consultoría
+            </a>
+          </div>
+    
+          <!-- Menú Hamburguesa para Móviles -->
+          <div class="md:hidden flex items-center">
+            <button class="text-slate-600 hover:text-disBlue focus:outline-none">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+              </svg>
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </nav>
+
+    <!-- ==========================================
+         2. HERO SECTION (Banner Edge-to-Edge Sutil)
+         ========================================== -->
+    <section class="relative bg-white pt-28 pb-36 lg:pt-36 lg:pb-44 overflow-hidden">
+      
+      <!-- Gráfico de Fondo de ancho completo con opacidad sutil (30%) -->
+      <div class="absolute inset-0 z-0 pointer-events-none opacity-30 overflow-hidden">
+        <img src="assets/hero-graphic.png" alt="Arquitectura y Escalabilidad DIS 365" class="w-full h-full object-cover object-center">
+      </div>
+
+      <!-- Contenedor del contenido (Texto limpio sin bloques de fondo pesados) -->
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        
+        <!-- Etiqueta de confianza superior -->
+        <div class="inline-flex items-center px-4 py-1.5 rounded-full border border-blue-100 bg-white/80 backdrop-blur-sm mb-8 shadow-sm">
+          <span class="flex h-2 w-2 rounded-full bg-disBlue mr-2 animate-pulse"></span>
+          <span class="text-sm font-semibold text-disBlue">Arquitectura y Automatización Escalable</span>
+        </div>
+
+        <!-- Título Principal (H1) -->
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight mb-6">
+          Transformamos la Complejidad en <br class="hidden md:block" />
+          <span class="text-disBlue">Soluciones Digitales Escalables</span>
+        </h1>
+
+        <!-- Subtítulo -->
+        <p class="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-slate-600 mb-10 font-medium">
+          Diseño, arquitectura de bases de datos y desarrollo de software end-to-end. Construimos sistemas limpios, eficientes y automatizados para negocios y empresas que exigen máximo rendimiento los 365 días del año.
+        </p>
+
+        <!-- Botones de Acción (CTAs) -->
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+          <a href="#contacto" class="w-full sm:w-auto inline-flex justify-center items-center px-8 py-3.5 border border-transparent text-base font-semibold rounded-lg text-white bg-disBlue hover:bg-blue-800 transition duration-300 shadow-lg shadow-blue-200/50">
+            Iniciar un Proyecto
+            <svg class="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </a>
+          <a href="#servicios" class="w-full sm:w-auto inline-flex justify-center items-center px-8 py-3.5 border border-slate-200 text-base font-semibold rounded-lg text-slate-700 bg-white hover:bg-slate-50 hover:border-slate-300 transition duration-300 shadow-sm">
+            Explorar Servicios
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- Fin de la Hero Section -->
+
+    <!-- ==========================================
+         2.5 SOBRE NOSOTROS (Identidad y Filosofía)
+         ========================================== -->
+    <section id="nosotros" class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+          
+          <!-- Columna de Texto -->
+          <div class="mb-12 lg:mb-0">
+            <div class="inline-flex items-center px-4 py-1.5 rounded-full border border-blue-100 bg-blue-50 mb-6">
+              <span class="text-sm font-semibold text-disBlue tracking-wide uppercase">Nuestra Filosofía</span>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6 tracking-tight">
+              Más que desarrolladores, somos <span class="text-disBlue">arquitectos de tu escalabilidad</span>.
+            </h2>
+            <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+              En DIS 365 no nos conformamos con escribir líneas de código; construimos ecosistemas tecnológicos robustos. Nacimos con la visión de transformar la complejidad operativa en sistemas limpios, intuitivos y estéticamente impecables.
+            </p>
+            <p class="text-lg text-slate-600 leading-relaxed">
+              Entendemos que en el sector, el rendimiento y la fiabilidad no son negociables. Por eso, aplicamos estándares estrictos de ingeniería de software para garantizar que tu empresa opere a su máxima capacidad, los 365 días del año.
+            </p>
+          </div>
+
+          <!-- Columna de Pilares de Valor -->
+          <div class="space-y-6">
+            
+            <!-- Pilar 1: Rendimiento -->
+            <div class="flex items-start bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition duration-300">
+              <div class="flex-shrink-0 w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center border border-slate-100">
+                <svg class="w-6 h-6 text-disBlue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+              </div>
+              <div class="ml-5">
+                <h4 class="text-lg font-bold text-slate-900">Alto Rendimiento</h4>
+                <p class="text-sm text-slate-600 mt-1">Sistemas optimizados y arquitecturas de bases de datos preparadas para procesar altos volúmenes de información sin interrupciones.</p>
+              </div>
+            </div>
+            
+            <!-- Pilar 2: UI/UX -->
+            <div class="flex items-start bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition duration-300">
+              <div class="flex-shrink-0 w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center border border-slate-100">
+                <svg class="w-6 h-6 text-disBlue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path></svg>
+              </div>
+              <div class="ml-5">
+                <h4 class="text-lg font-bold text-slate-900">Diseño UI/UX Impecable</h4>
+                <p class="text-sm text-slate-600 mt-1">Desarrollamos interfaces minimalistas y centradas en el usuario que reducen drásticamente la curva de aprendizaje de tu equipo.</p>
+              </div>
+            </div>
+
+            <!-- Pilar 3: Soporte 365 -->
+            <div class="flex items-start bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition duration-300">
+              <div class="flex-shrink-0 w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center border border-slate-100">
+                <svg class="w-6 h-6 text-disBlue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              </div>
+              <div class="ml-5">
+                <h4 class="text-lg font-bold text-slate-900">Cobertura Integral 365</h4>
+                <p class="text-sm text-slate-600 mt-1">Disponibilidad absoluta. Acompañamos todo el ciclo de vida de tu producto digital con monitoreo y soporte técnico continuo.</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- Fin de Sobre Nosotros -->
+    <!-- ==========================================
+         3. SECCIÓN DE SERVICIOS (Los Nodos)
+         ========================================== -->
+    <section id="servicios" class="py-24 bg-slate-50 border-t border-slate-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Encabezado de Sección -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4 tracking-tight">
+            Ingeniería a la Medida de tus Objetivos
+          </h2>
+          <p class="text-lg text-slate-600">
+            Abarcamos todo el ciclo de vida del software. Desde la consultoría inicial hasta el despliegue en la nube, garantizando disponibilidad y escalabilidad continua.
+          </p>
+        </div>
+
+        <!-- Grid de Servicios (6 Tarjetas - Simetría Perfecta) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Servicio 1: SaaS a Medida -->
+          <div class="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm hover:shadow-md transition duration-300 group">
+            <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-disBlue transition duration-300">
+              <svg class="w-6 h-6 text-disBlue group-hover:text-white transition duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">Desarrollo de SaaS a Medida</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Construimos Software as a Service robusto. Desarrollamos entornos de alto rendimiento utilizando frameworks en Python para crear soluciones limpias, escalables y orientadas al usuario final.
+            </p>
+          </div>
+
+          <!-- Servicio 2: Arquitectura y Base de Datos -->
+          <div class="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm hover:shadow-md transition duration-300 group">
+            <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-disBlue transition duration-300">
+              <svg class="w-6 h-6 text-disBlue group-hover:text-white transition duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path></svg>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">Arquitectura Backend y BD</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Diseñamos arquitecturas lógicas e infraestructura sólida. Implementamos y gestionamos bases de datos relacionales (como PostgreSQL) preparadas para alta concurrencia de datos.
+            </p>
+          </div>
+
+          <!-- Servicio 3: IA y Chatbots -->
+          <div class="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm hover:shadow-md transition duration-300 group">
+            <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-disBlue transition duration-300">
+              <svg class="w-6 h-6 text-disBlue group-hover:text-white transition duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">Agentes de IA Corporativos</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Integramos inteligencia artificial para potenciar tu atención al cliente y operaciones. Desarrollamos agentes virtuales avanzados capaces de procesar lógica de negocio compleja.
+            </p>
+          </div>
+
+          <!-- Servicio 4: Automatización -->
+          <div class="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm hover:shadow-md transition duration-300 group">
+            <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-disBlue transition duration-300">
+              <svg class="w-6 h-6 text-disBlue group-hover:text-white transition duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">Automatización de Procesos</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Eliminamos el trabajo manual. Conectamos tu ecosistema empresarial creando flujos B2B y orquestando integraciones mediante REST APIs y herramientas especializadas.
+            </p>
+          </div>
+
+          <!-- Servicio 5: Sistemas de Gestión -->
+          <div class="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm hover:shadow-md transition duration-300 group">
+            <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-disBlue transition duration-300">
+              <svg class="w-6 h-6 text-disBlue group-hover:text-white transition duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">Sistemas de Gestión / ERP</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Soluciones a medida. Centraliza la administración, el control de almacenes y la contabilidad en interfaces limpias que optimizan la toma de decisiones.
+            </p>
+          </div>
+
+          <!-- Servicio 6: E-commerce & Chatbots (NUEVO) -->
+          <div class="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm hover:shadow-md transition duration-300 group">
+            <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-disBlue transition duration-300">
+              <!-- Icono de Tienda/Catálogo -->
+              <svg class="w-6 h-6 text-disBlue group-hover:text-white transition duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">E-commerce y Catálogos IA</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Desarrollamos páginas web y tiendas virtuales de alta conversión. Integramos catálogos dinámicos con chatbots inteligentes para automatizar ventas y soporte 24/7.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- Fin de la Sección de Servicios -->
+    
+
+    <!-- ==========================================
+         4. SOLUCIONES SAAS (Casos de Éxito / Productos)
+         ========================================== -->
+    <section id="soluciones" class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Encabezado -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4 tracking-tight">
+            Nuestras Soluciones SaaS de Alto Rendimiento
+          </h2>
+          <p class="text-lg text-slate-600">
+            No solo diseñamos arquitecturas, construimos plataformas listas para operar. Conoce nuestras herramientas insignia desarrolladas para transformar la gestión empresarial y de salud.
+          </p>
+        </div>
+
+        <!-- Grid de Productos (2 Columnas) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+          
+          <!-- Tarjeta Clinix -->
+          <div class="flex flex-col md:flex-row items-center bg-slate-50 rounded-2xl p-8 border border-slate-100 hover:shadow-lg transition duration-300">
+            <div class="flex-shrink-0 mb-6 md:mb-0 md:mr-8 bg-white p-4 rounded-xl shadow-sm border border-slate-100 flex items-center justify-center w-32 h-32">
+              <!-- Asegúrate de tener logo-clinix.png en tu carpeta assets -->
+              <img src="assets/logo-clinix.png" alt="Logo Clinix" class="w-full h-full object-contain drop-shadow-sm">
+            </div>
+            <div class="text-center md:text-left">
+              <h3 class="text-2xl font-bold text-slate-900 mb-2">Clinix</h3>
+              <p class="text-sm font-semibold text-disBlue mb-3 uppercase tracking-wider">Sistema de Gestión Clínica</p>
+              <p class="text-slate-600 text-sm leading-relaxed mb-5">
+                Software especializado con arquitectura en Python diseñado para digitalizar y optimizar el flujo de trabajo en centros de salud. Centraliza historias clínicas, agendamiento y administración operativa en una interfaz limpia.
+              </p>
+              <a href="#" class="inline-flex items-center text-sm font-semibold text-disBlue hover:text-blue-800 transition duration-200">
+                Conocer más sobre Clinix
+                <svg class="ml-1.5 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Tarjeta ContaPy -->
+          <div class="flex flex-col md:flex-row items-center bg-slate-50 rounded-2xl p-8 border border-slate-100 hover:shadow-lg transition duration-300">
+            <div class="flex-shrink-0 mb-6 md:mb-0 md:mr-8 bg-white p-4 rounded-xl shadow-sm border border-slate-100 flex items-center justify-center w-32 h-32">
+              <!-- Asegúrate de tener logo-contapy.png en tu carpeta assets -->
+              <img src="assets/logo-contapy.png" alt="Logo ContaPy" class="w-full h-full object-contain drop-shadow-sm">
+            </div>
+            <div class="text-center md:text-left">
+              <h3 class="text-2xl font-bold text-slate-900 mb-2">ContaPy Pro</h3>
+              <p class="text-sm font-semibold text-[#278640] mb-3 uppercase tracking-wider">Herramienta Administrativa y Contable</p>
+              <p class="text-slate-600 text-sm leading-relaxed mb-5">
+                Una potente solución desarrollada en Python para la automatización financiera. ContaPy Pro simplifica la contabilidad corporativa, la gestión de inventarios y la generación de reportes con alta precisión.
+              </p>
+              <a href="#" class="inline-flex items-center text-sm font-semibold text-[#278640] hover:text-green-800 transition duration-200">
+                Conocer más sobre ContaPy
+                <svg class="ml-1.5 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         4.5 METODOLOGÍA DE DESARROLLO (Línea de tiempo)
+         ========================================== -->
+    <section id="metodologia" class="py-24 bg-slate-900 text-white relative overflow-hidden">
+      <!-- Decidí usar un fondo oscuro aquí para crear un contraste espectacular con la sección SaaS (blanca) y que conecte con la vibra de la imagen de referencia que te gustó -->
+      
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <!-- Encabezado -->
+        <div class="text-center max-w-3xl mx-auto mb-20">
+          <p class="text-sm font-semibold text-disBlue tracking-widest uppercase mb-3">Nuestro Proceso</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">
+            Metodología de Desarrollo
+          </h2>
+          <p class="text-lg text-slate-400">
+            Un proceso de ingeniería riguroso para garantizar entregas exitosas, puntuales y sin sorpresas.
+          </p>
+        </div>
+
+        <!-- Timeline / Pasos (Diseño Responsivo: Vertical en móvil, Horizontal en PC) -->
+        <div class="relative">
+          
+          <!-- Línea conectora horizontal (solo visible en pantallas grandes) -->
+          <div class="hidden lg:block absolute top-12 left-0 w-full h-[1px] bg-slate-700 z-0"></div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-6 relative z-10">
+            
+            <!-- Paso 1 -->
+            <div class="text-center group">
+              <div class="w-10 h-10 mx-auto bg-slate-900 border-2 border-slate-700 rounded-full flex items-center justify-center text-sm font-bold text-slate-400 mb-6 group-hover:border-disBlue group-hover:text-disBlue transition duration-300">01</div>
+              <svg class="w-8 h-8 mx-auto text-slate-300 mb-4 group-hover:text-white transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+              <h4 class="text-lg font-bold mb-2">Análisis</h4>
+              <p class="text-sm text-slate-400 leading-relaxed">Auditoría de procesos y definición de KPIs tecnológicos clave para tu negocio.</p>
+            </div>
+
+            <!-- Paso 2 -->
+            <div class="text-center group">
+              <div class="w-10 h-10 mx-auto bg-slate-900 border-2 border-slate-700 rounded-full flex items-center justify-center text-sm font-bold text-slate-400 mb-6 group-hover:border-disBlue group-hover:text-disBlue transition duration-300">02</div>
+              <svg class="w-8 h-8 mx-auto text-slate-300 mb-4 group-hover:text-white transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path></svg>
+              <h4 class="text-lg font-bold mb-2">Arquitectura</h4>
+              <p class="text-sm text-slate-400 leading-relaxed">Diseño de esquemas de datos, flujos de automatización y wireframes UI/UX.</p>
+            </div>
+
+            <!-- Paso 3 -->
+            <div class="text-center group">
+              <div class="w-10 h-10 mx-auto bg-slate-900 border-2 border-slate-700 rounded-full flex items-center justify-center text-sm font-bold text-slate-400 mb-6 group-hover:border-disBlue group-hover:text-disBlue transition duration-300">03</div>
+              <svg class="w-8 h-8 mx-auto text-slate-300 mb-4 group-hover:text-white transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+              <h4 class="text-lg font-bold mb-2">Desarrollo</h4>
+              <p class="text-sm text-slate-400 leading-relaxed">Ingeniería ágil con entregas iterativas y revisiones constantes con tu equipo.</p>
+            </div>
+
+            <!-- Paso 4 -->
+            <div class="text-center group">
+              <div class="w-10 h-10 mx-auto bg-slate-900 border-2 border-slate-700 rounded-full flex items-center justify-center text-sm font-bold text-slate-400 mb-6 group-hover:border-disBlue group-hover:text-disBlue transition duration-300">04</div>
+              <svg class="w-8 h-8 mx-auto text-slate-300 mb-4 group-hover:text-white transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+              <h4 class="text-lg font-bold mb-2">QA & Pruebas</h4>
+              <p class="text-sm text-slate-400 leading-relaxed">Validación exhaustiva de funcionalidad, seguridad de datos y rendimiento.</p>
+            </div>
+
+            <!-- Paso 5 -->
+            <div class="text-center group">
+              <div class="w-10 h-10 mx-auto bg-slate-900 border-2 border-slate-700 rounded-full flex items-center justify-center text-sm font-bold text-slate-400 mb-6 group-hover:border-disBlue group-hover:text-disBlue transition duration-300">05</div>
+              <svg class="w-8 h-8 mx-auto text-slate-300 mb-4 group-hover:text-white transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+              <h4 class="text-lg font-bold mb-2">Despliegue</h4>
+              <p class="text-sm text-slate-400 leading-relaxed">Puesta en producción en la nube y monitoreo continuo post-lanzamiento (Soporte 365).</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         4.6 PREGUNTAS FRECUENTES (FAQ)
+         ========================================== -->
+    <section id="faq" class="py-24 bg-slate-50 border-t border-slate-100">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Encabezado -->
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4 tracking-tight">
+            Preguntas Frecuentes
+          </h2>
+          <p class="text-lg text-slate-600">
+            Claridad total sobre nuestro proceso de desarrollo, plazos y garantías.
+          </p>
+        </div>
+
+        <!-- Acordeones (Sin JavaScript, usando HTML5 <details>) -->
+        <div class="space-y-4">
+          
+          <!-- Pregunta 1 -->
+          <details class="group bg-white border border-slate-200 rounded-xl shadow-sm [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-slate-900 font-semibold">
+              ¿Cuánto tiempo toma desarrollar una automatización o sistema SaaS?
+              <span class="relative h-5 w-5 shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="absolute inset-0 h-5 w-5 opacity-100 group-open:opacity-0 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="absolute inset-0 h-5 w-5 opacity-0 group-open:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" /></svg>
+              </span>
+            </summary>
+            <div class="px-6 pb-6 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4 mt-2">
+              El tiempo varía según la complejidad. Una integración simple de API o automatización puede tomar de 2 a 4 semanas. Un sistema de gestión (ERP) o SaaS completo, desde su arquitectura hasta el despliegue, generalmente requiere entre 2 y 4 meses de desarrollo ágil.
+            </div>
+          </details>
+
+          <!-- Pregunta 2 -->
+          <details class="group bg-white border border-slate-200 rounded-xl shadow-sm [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-slate-900 font-semibold">
+              ¿Ofrecen soporte técnico después de finalizar el proyecto?
+              <span class="relative h-5 w-5 shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="absolute inset-0 h-5 w-5 opacity-100 group-open:opacity-0 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="absolute inset-0 h-5 w-5 opacity-0 group-open:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" /></svg>
+              </span>
+            </summary>
+            <div class="px-6 pb-6 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4 mt-2">
+              Sí, es la esencia de nuestro nombre: DIS 365. Ofrecemos planes de mantenimiento continuo que garantizan que tus servidores, bases de datos y códigos estén siempre actualizados, seguros y rindiendo al 100% todo el año.
+            </div>
+          </details>
+
+          <!-- Pregunta 3 -->
+          <details class="group bg-white border border-slate-200 rounded-xl shadow-sm [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-slate-900 font-semibold">
+              ¿Puedo escalar mi plan o agregar módulos en el futuro?
+              <span class="relative h-5 w-5 shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="absolute inset-0 h-5 w-5 opacity-100 group-open:opacity-0 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="absolute inset-0 h-5 w-5 opacity-0 group-open:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" /></svg>
+              </span>
+            </summary>
+            <div class="px-6 pb-6 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4 mt-2">
+              Absolutamente. Nuestra arquitectura de software está diseñada con escalabilidad en mente. Construimos el código de manera modular, por lo que agregar nuevas funcionalidades, conectar nuevos catálogos o integrar inteligencia artificial en el futuro es un proceso fluido.
+            </div>
+          </details>
+
+          <!-- Pregunta 4 -->
+          <details class="group bg-white border border-slate-200 rounded-xl shadow-sm [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-slate-900 font-semibold">
+              ¿Trabajan de manera 100% remota?
+              <span class="relative h-5 w-5 shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="absolute inset-0 h-5 w-5 opacity-100 group-open:opacity-0 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="absolute inset-0 h-5 w-5 opacity-0 group-open:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" /></svg>
+              </span>
+            </summary>
+            <div class="px-6 pb-6 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4 mt-2">
+              Sí. Aunque tenemos nuestra base de operaciones tecnológicas, trabajamos de forma completamente remota con clientes globales. Toda la consultoría, entrega de avances y soporte se realiza mediante videollamadas y plataformas ágiles de gestión.
+            </div>
+          </details>
+
+        </div>
+      </div>
+    </section>
+    <!-- Fin de FAQ -->
+    <!-- ==========================================
+         5. SECCIÓN DE CONTACTO (Generación de Leads)
+         ========================================== -->
+    <section id="contacto" class="py-24 bg-slate-900 relative overflow-hidden">
+      <!-- Decoración de fondo sutil (Nodos oscuros) -->
+      <div class="absolute inset-0 z-0 opacity-10">
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:3rem_3rem]"></div>
+      </div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          
+          <!-- Texto Persuasivo y Datos -->
+          <div>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 tracking-tight">
+              ¿Listo para escalar la tecnología de tu empresa?
+            </h2>
+            <p class="text-lg text-slate-400 mb-8 leading-relaxed">
+              Hablemos de tus necesidades de software, automatización o infraestructura. Nuestro equipo de arquitectos está listo para diseñar una solución a la medida de tus objetivos.
+            </p>
+            
+            <div class="space-y-6">
+              <!-- Email -->
+              <div class="flex items-start">
+                <svg class="w-6 h-6 text-disBlue mt-1 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                <div>
+                  <p class="text-sm font-semibold text-white">Correo Corporativo</p>
+                  <p class="text-slate-400">alejandro.rivas@dis365.com</p>
+                </div>
+              </div>
+              <!-- Ubicación -->
+              <div class="flex items-start">
+                <svg class="w-6 h-6 text-disBlue mt-1 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.243-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                <div>
+                  <p class="text-sm font-semibold text-white">Sede Base</p>
+                  <p class="text-slate-400">Maturín, Monagas, Venezuela<br>Operaciones Globales (Remote)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Formulario de Consultoría B2B -->
+          <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 shadow-xl">
+            <form action="#" method="POST" class="space-y-5">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div>
+                  <label for="nombre" class="block text-sm font-medium text-slate-300 mb-1">Nombre completo</label>
+                  <input type="text" id="nombre" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-disBlue focus:ring-1 focus:ring-disBlue transition" placeholder="Ej. Carlos Pérez">
+                </div>
+                <div>
+                  <label for="empresa" class="block text-sm font-medium text-slate-300 mb-1">Empresa</label>
+                  <input type="text" id="empresa" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-disBlue focus:ring-1 focus:ring-disBlue transition" placeholder="Nombre de tu empresa">
+                </div>
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium text-slate-300 mb-1">Correo laboral</label>
+                <input type="email" id="email" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-disBlue focus:ring-1 focus:ring-disBlue transition" placeholder="carlos@tuempresa.com">
+              </div>
+              <div>
+                <label for="mensaje" class="block text-sm font-medium text-slate-300 mb-1">¿Qué desafío técnico necesitas resolver?</label>
+                <textarea id="mensaje" rows="4" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-disBlue focus:ring-1 focus:ring-disBlue transition" placeholder="Desarrollo SaaS, optimización de base de datos..."></textarea>
+              </div>
+              <button type="submit" class="w-full bg-disBlue hover:bg-blue-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300 shadow-lg">
+                Solicitar Consultoría Gratuita
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- Fin de Contacto -->
+
+    <!-- ==========================================
+         6. FOOTER (Pie de Página)
+         ========================================== -->
+    <footer class="bg-slate-950 py-10 border-t border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+        
+        <!-- Logo Footer -->
+        <div class="mb-4 md:mb-0">
+          <span class="text-2xl font-extrabold text-slate-300 tracking-tight opacity-70">
+            DIS<span class="text-disBlue">365</span>
+          </span>
+        </div>
+
+        <!-- Enlaces Rápidos -->
+        <div class="flex space-x-6 text-sm text-slate-500 mb-4 md:mb-0">
+          <a href="#servicios" class="hover:text-white transition">Servicios</a>
+          <a href="#soluciones" class="hover:text-white transition">Soluciones SaaS</a>
+          <a href="#" class="hover:text-white transition">Privacidad</a>
+          <a href="#" class="hover:text-white transition">Términos</a>
+        </div>
+
+        <!-- Copyright -->
+        <div class="text-slate-600 text-sm">
+          &copy; 2026 DIS 365. Todos los derechos reservados.
+        </div>
+
+      </div>
+    </footer>
+    <!-- Fin del Footer -->
+
+</body>
+</html>
+
+</body>
+</html>
